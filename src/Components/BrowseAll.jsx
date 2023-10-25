@@ -16,7 +16,7 @@ export default function BrowseAll() {
 
   return (
     <section>
-      <h1>Borwse ALL</h1>
+      <h1>Browse</h1>
       <main className="main-container">
         {allArticles.map((article) => {
           const uniqueId = uuidv4();

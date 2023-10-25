@@ -8,7 +8,7 @@ export default function NavBar() {
     <nav className="article-nav">
       <div className="nav-links">
         <Link to="/home">Home</Link>
-        <Link to="./BrowseAll">BrowseAll</Link>
+        <Link to="./BrowseAll">Browse</Link>
       </div>
       <div className="dropdowns">
         <TopicDropDown />

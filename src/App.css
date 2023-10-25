@@ -1,5 +1,5 @@
 #root {
-  max-width: 1280px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
@@ -10,6 +10,7 @@
 .title {
   color: #007bff;
   font-size: 3rem;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 
 .article-nav {
@@ -95,9 +96,11 @@
 }
 
 .article-title {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-weight: 100;
   font-size: 2rem;
   margin-bottom: 10px;
-  color: #007bff;
+  color: black;
 }
 
 .article-topic {
@@ -110,6 +113,7 @@
   margin-bottom: 30px;
   font-size: 1.5rem;
   line-height: 1.6;
+  font-family: "Courier New", Courier, monospace;
 }
 
 .comment-container {
