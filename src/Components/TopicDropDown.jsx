@@ -4,7 +4,8 @@ import "react-dropdown/style.css";
 
 export default function TopicDropDown() {
   const [open, setOpen] = useState(false);
-  const options = ["One", "two", "three"];
+
+  const options = ["one", "two", "three"];
   const defaultOption = "Topic";
 
   const handleOpen = () => {

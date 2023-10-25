@@ -2,13 +2,14 @@ import React from "react";
 import { useState, useEffect } from "react";
 import * as api from "../api";
 import ArticleCard from "./ArticleCard";
+import { Link } from "react-router-dom";
+import { v4 as uuidv4 } from "uuid";
 
 export default function BrowseAll() {
   const [allArticles, setAllArticles] = useState([]);
 
   useEffect(() => {
     api.getArticles().then((articles) => {
-      console.log(articles);
       setAllArticles(articles);
     });
   }, []);
@@ -16,10 +17,15 @@ export default function BrowseAll() {
   return (
     <section>
       <h1>Borwse ALL</h1>
-      <main className="card-container">
-        {allArticles.map((article, index) => {
+      <main className="main-container">
+        {allArticles.map((article) => {
+          const uniqueId = uuidv4();
           return (
-            <ArticleCard article={article} key={`${article.name}${index}`} />
+            <div className="artical-preview" key={uniqueId}>
+              <Link className="link" to={`/articles/${article.article_id}`}>
+                <ArticleCard article={article} />
+              </Link>
+            </div>
           );
         })}
       </main>
