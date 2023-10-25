@@ -4,15 +4,19 @@ import Header from "./Components/Header";
 import BrowseAll from "./Components/BrowseAll";
 import { Route, Routes } from "react-router-dom";
 import SingleArtical from "./Components/SingleArticalPage";
+import HomePage from "./HomaePage";
+import NavBar from "./Components/NavBar";
 
 function App() {
-  const [artciles, setArtciles] = useState([]);
-
   return (
     <div className="App">
-      <Header />
+      <header>
+        <Header />
+        <NavBar />
+      </header>
       <Routes>
-        <Route path="/" element={<Header />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/home" element={<HomePage />} />
         <Route path="/BrowseAll" element={<BrowseAll />} />
         <Route path="/articles/:article_id" element={<SingleArtical />} />
       </Routes>
