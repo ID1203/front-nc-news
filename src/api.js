@@ -21,3 +21,13 @@ export const getArticleCommentsById = (article_id) => {
     return data;
   });
 };
+
+export const patchArticlebyId = (article_id, value) => {
+  console.log(article_id, value);
+  return request
+    .patch(`articles/${article_id}`, { incVote: value })
+    .then(({ data: { votes } }) => {
+      console.log(votes);
+      return votes;
+    });
+};

@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import * as api from "../api";
 import { useParams } from "react-router-dom";
-import ArticleCard from "./ArticleCard";
 import CommentSection from "./CommentSection";
+import VotingButton from "./VotingButton";
 
 export default function SingleArtical() {
   const [singleArticle, setSingleArticle] = useState([]);
@@ -30,6 +30,7 @@ export default function SingleArtical() {
           alt="Article Image"
         />
         <p className="article-text">{singleArticle.body}</p>
+        <VotingButton singleArticle={singleArticle} />
         <CommentSection singleArticle={singleArticle} />
       </div>
     </div>
