@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import * as api from "../api";
 import Comment from "./Comment";
+import AddCommentBox from "./AddCommentBox";
 
 export default function CommentSection({ singleArticle }) {
   const [comments, setComments] = useState([]);
@@ -20,8 +21,13 @@ export default function CommentSection({ singleArticle }) {
   return (
     <section>
       <div className="comment-container">
-        {comments.map((comment) => {
-          return <Comment key={comment.comment_id} comment={comment} />;
+        <AddCommentBox
+          singleArticle={singleArticle}
+          comments={comments}
+          setComments={setComments}
+        />
+        {comments.map((comment, index) => {
+          return <Comment key={index} comment={comment} />;
         })}
       </div>
     </section>
