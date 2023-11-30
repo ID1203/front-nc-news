@@ -23,11 +23,24 @@ export const getArticleCommentsById = (article_id) => {
 };
 
 export const patchArticlebyId = (article_id, value) => {
-  console.log(article_id, value);
   return request
     .patch(`articles/${article_id}`, { incVote: value })
     .then(({ data: { votes } }) => {
-      console.log(votes);
       return votes;
     });
+};
+
+export const postComment = (article_id, commentData) => {
+  console.log(commentData);
+  return request
+    .post(`articles/${article_id}/comments`, commentData)
+    .then(({ data: { body } }) => {
+      return body;
+    });
+};
+
+export const getTopics = () => {
+  return request.get("topics").then(({ data: { topics } }) => {
+    return topics;
+  });
 };
