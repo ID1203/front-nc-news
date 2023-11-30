@@ -22,17 +22,17 @@ export default function AddCommentBox({
     const newComment = {
       username: "jessjelly",
       body: comment,
-      temporaryId: Date(),
+      temporaryId: Date.now(),
       votes: 0,
     };
 
     setIsSubmitting(true);
-    setComments((comments) => [newComment, ...comments]);
+    setComments((prevComments) => [newComment, ...prevComments]);
     setComment("");
     setError(null);
 
     api
-      .postComment(singleArticle.article_id, newComments)
+      .postComment(singleArticle.article_id, newComment)
       .then((response) => {
         setSuccessMessage("Comment posted successfully!");
         setComment("");
